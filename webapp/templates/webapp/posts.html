@@ -1,0 +1,50 @@
+{% extends "webapp/base.html" %}
+{% block content %}
+{% load static %}
+<style>
+    img{
+        max-width: 100%;
+        object-fit: cover;
+    }
+    .tags{
+        display: inline-block;
+        color: #fff;
+        background-color: #888;
+        border-radius: 5px;
+        margin: 2px;
+        padding: 2px , 5px;
+        font-size: 22px;
+    }
+    
+    
+</style>
+
+<div class='main-container'>
+  
+<br>
+<br>
+<br>
+    
+        <img src="{{post.thumbnail.url}}">
+        <div class="post-preview">
+            <h4 class="post-title">{{post.headline}}</h4>
+            
+            <h4 class="post-intro">{{post.sub_headline}}</h4>
+            <p >Created at {{post.created}}</p>
+            <p >{{post.body}}</p>
+            
+            
+            <hr>
+                {% for tags  in post.tags.all  %}
+                <span class="tags">{{tags}}</span>
+                
+                {% endfor %}
+                <hr>
+                <br>
+        
+        </div>
+</div>
+
+
+
+{% endblock content %}

@@ -1,0 +1,171 @@
+{% extends "webapp/base.html" %}
+{% load static %}
+
+{% block content %}
+	<title>Dennis Ivy</title>
+	
+
+
+
+	<section class="s1">
+		<div class="main-container">
+			<div class="greeting-wrapper">
+				<h1>Hi, I'm Zeeshan khan</h1>
+			</div>
+
+
+			<div class="intro-wrapper">
+				
+
+				<div class="left-column">
+					<img id="profile_pic" src="{% static "images/my.png" %}">
+					{% comment %} <h5 style="text-align: center;line-height: 0;">Personalize Theme</h5> {% endcomment %}
+
+					{% comment %} <div id="theme-options-wrapper">
+						<div data-mode="light" id="light-mode" class="theme-dot"></div>
+						<div data-mode="blue" id="blue-mode" class="theme-dot"></div>
+						<div data-mode="green" id="green-mode" class="theme-dot"></div>
+						<div data-mode="purple" id="purple-mode" class="theme-dot"></div>
+					</div> {% endcomment %}
+
+					{% comment %} <p id="settings-note">*Theme settings will be saved for<br>your next vist</p> {% endcomment %}
+				</div>
+
+				<div class="right-column">
+
+					<div id="preview-shadow">
+						<div id="preview">
+							<div id="corner-tl" class="corner"></div>
+							<div id="corner-tr" class="corner"></div>
+							<h3>What I Do</h3>
+							<p>I am a Django Fullstack developer Who enjoys creating new web apps and sites.</p>
+							<div id="corner-br" class="corner"></div>
+							<div id="corner-bl" class="corner"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="s2">
+		<div class="main-container">
+
+			<div class="about-wrapper">
+				<div class="about-me">
+					<h4>More about me</h4>
+
+					<p>I build new projects just to tickle my brain and love teaching others how they're made.</p>
+
+					<p>While I keep busy teaching courses, I still take time to learn new things and make projects that interest me.</p>
+
+
+					<hr>
+
+					<h4>TOP EXPERTISE</h4>
+
+					<p>Fullstack developer with primary focus on Django + React: </p>
+
+					<div id="skills">
+						<ul>
+							<li>Python</li>
+							<li>Django</li>
+							<li>JavaScript</li>
+							<li>React</li>
+							<li>HTML/CSS</li>
+							{% comment %} <li>Postgres</li> {% endcomment %}
+						</ul>
+
+						<ul>
+							<li> APIs</li>
+							<li>JS Charts</li>
+							<li>Git hub</li>
+							<li>Heroku</li>
+							<li>vercel</li>
+							
+						</ul>
+
+					</div>
+
+				</div>
+
+				<div class="social-links">
+					<img id="social_img" src="{% static "images/linkedin.png" %}">
+					<h3>Find me on Twitter & linkedin</h3>
+
+					<a target="_blank" href="https://www.linkedin.com/in/zeeshan-khan-460964271">Linkdin: @zeeshan_khan</a>
+					<br>
+					<a target="_blank" href="https://twitter.com/Zeeshan_Sikndar">Twitter: @Zeeshan khan</a>
+					<br>
+					<a target="_blank" href="https://github.com/zeeshan07github">Github: @Zeeshan</a>
+				</div>
+			</div>
+
+		</div>
+	</section>
+
+	<section class="s1">
+		<div class="main-container">
+			<h3 style="text-align: center;">Some of my past projects</h3>
+
+			<div class="post-wrapper">
+				
+
+				{% for post in posts  %}
+    <div>
+
+        <div class="post">
+            <img class="thumbnail" src="{{post.thumbnail.url}}">
+            <div class="post-preview">
+                <h6 class="post-title">{{post.headline}}</h6>
+                <p class="post-intro">{{post.sub_headline}}</p>
+                <a href=" {% url 'posts'  %} ">Read More</a>
+				<br>
+				
+            </div>
+        </div>
+        
+    </div>
+    {% endfor %}
+				
+			</div>
+			<p style = 'text-align: center;'>
+				<a href="{% url 'posts' %}">View more</a>
+				<br>
+                
+			</p>
+			
+		</div>
+	</section>
+
+	<section class="s2">
+		<div class="main-container">
+			<a href=""></a>
+			<h3 style="text-align: center;">Get In Touch</h3>
+			<div id="contact">
+			<form id="contact-form" method="post" action="{% url 'submit_form' %}">
+				{% csrf_token %}
+				
+				<label for="id_name">Name</label>
+				<input class="input-field" type="text" name="name" id="id_name">
+			
+				<label for="id_subject">Subject</label>
+				<input class="input-field" type="text" name="subject" id="id_subject">
+			
+				<label for="id_email">Email</label>
+				<input class="input-field" type="text" name="email" id="id_email">
+			
+				<label for="id_message">Message</label>
+				<textarea class="input-field" name="message" id="id_message"></textarea>
+			
+				<input id="submit-btn" type="submit" value="Send">
+			</form>
+			</div>
+		</div>
+	</section> 
+
+	
+
+
+    <!-- <script  type="javascript" src="{% static 'js/script.js' %}"></script> -->
+	{% endblock content %}
