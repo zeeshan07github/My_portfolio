@@ -15,7 +15,7 @@ class tags(models.Model):
 class posts(models.Model):
     headline = models.CharField( max_length=50)
     sub_headline = models.CharField( max_length=250)
-    thumbnail= models.ImageField(null=True , blank=True , default='1691219476696.jpg')
+    thumbnail= models.ImageField(null=True , blank=True , default='desktop wallpaper.jpg')
     body = models.TextField(null=True , blank=True)
     created = models.DateTimeField( auto_now_add=True)
     tags=models.ManyToManyField(tags, null=True)

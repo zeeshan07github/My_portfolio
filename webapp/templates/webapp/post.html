@@ -21,6 +21,14 @@
     </form>
     <br>
     <br>
+    <div style="text-align: center;">
+    <a  href="https://zeeshansikander07.pythonanywhere.com/">Link To my previous project</a> 
+    <br>
+    <br>
+    <a  href="https://zeeshansikander.pythonanywhere.com/">Link To my Other project</a> 
+    <br>
+</div>
+    <br>
 
     {% if items %}
         <div class="post-wrapper">
@@ -30,6 +38,8 @@
                     <div class="post-preview">
                         <h6 class="post-title">{{ post.headline }}</h6>
                         <p class="post-intro">{{ post.sub_headline }}....</p>
+                        
+                        
                         <br>
                         <a href="{% url 'post' post.id %}">Read More</a> |
                         {% if request.user.is_authenticated %}

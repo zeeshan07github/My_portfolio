@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link id="theme-style" rel="stylesheet" type="text/css" href="{% static "css/default.css" %}">
+    <link id="theme-style" rel="stylesheet"  href="{% static "css/default.css" %}">
     {% comment %} <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> {% endcomment %}
     
     <title>Webapp</title>
@@ -18,16 +18,16 @@
         }
     </style>
     
-    {% include "Webapp/navbar.html" %}
+    {% include "webapp/navbar.html" %}
 
     {% block content %}
     {% endblock content %}
     
     <!-- Corrected script tag -->
     
-<script type="text/javascript">
+{% comment %} <script type="text/javascript">
     let staticPath = "{% static 'css' %}"; // Provide the correct path to your static CSS files
-</script>
+</script> {% endcomment %}
 
 {% comment %} <script type="text/javascript" src="{% static "js/script.js" %}"></script> {% endcomment %}
 

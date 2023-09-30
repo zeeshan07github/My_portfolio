@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-=8w$5_ld51x0k9%(&)35wq8x2@m()-8b!i^@*7yx4x)_m=yr9$
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-
+DEBUG = True
 ALLOWED_HOSTS =  ["*"]
 
 
@@ -124,16 +124,15 @@ EMAIL_HOST_PASSWORD = 'gypv ryrh dtcv yruo'
 
 STATIC_URL = "static/"
 STATICFILES_DIRS = [
-    BASE_DIR / 'static' ,
+    BASE_DIR / 'static'
 ]
 
-STATICFILES_DIRS = [BASE_DIR/'static',]
-STATIC_ROOT = BASE_DIR/'staticfiles'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
-
-MEDIA_ROOT = BASE_DIR / 'media' 
-MEDIA_URL = '/media/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+MEDIA_ROOT = BASE_DIR / 'media' 
+MEDIA_URL = '/media/'
